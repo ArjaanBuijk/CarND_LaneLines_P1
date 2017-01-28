@@ -16,14 +16,6 @@ import cv2
 
 import math
 
-# # these sizes are in pixels
-# hood_size=0
-# roi_height=0        # roi = region of interest
-# roi_width_bot=0
-# roi_width_top=0
-# roi_shift_bot=0         # sideways shift from center of image
-# roi_shift_top=0
-
 def grayscale(img):
     """Applies the Grayscale transform
     This will return an image with only one color channel
