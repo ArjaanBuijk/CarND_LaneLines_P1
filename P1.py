@@ -16,13 +16,13 @@ import cv2
 
 import math
 
-# these sizes are in pixels
-hood_size=0
-roi_height=0        # roi = region of interest
-roi_width_bot=0
-roi_width_top=0
-roi_shift_bot=0         # sideways shift from center of image
-roi_shift_top=0
+# # these sizes are in pixels
+# hood_size=0
+# roi_height=0        # roi = region of interest
+# roi_width_bot=0
+# roi_width_top=0
+# roi_shift_bot=0         # sideways shift from center of image
+# roi_shift_top=0
 
 def grayscale(img):
     """Applies the Grayscale transform
@@ -120,6 +120,8 @@ def weighted_img(img, initial_img, α=0.8, β=1., λ=0.):
     """
     return cv2.addWeighted(initial_img, α, img, β, λ)
 
+# TODO: Build your pipeline that will draw lane lines on the test_images
+# then save them to the test_images directory.
 
 def draw_lanes_on_image(file_in, file_out, show_all=True, show_final=True):
     ####################################################################
@@ -129,6 +131,7 @@ def draw_lanes_on_image(file_in, file_out, show_all=True, show_final=True):
     print('Processing image from file: '+file_in)
     combo = process_image(image, show_all, show_final)
     
+    plt.imshow(combo)
     plt.savefig(file_out)
     print('Processed image saved as: ' + file_out)
    
